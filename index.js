@@ -43,5 +43,33 @@ function setupTabSlider() {
   }
 }
 
+const input = document.querySelector("#phone");
+
+const iti = window.intlTelInput(input, {
+  initialCountry: "auto",
+  geoIpLookup: callback => {
+    fetch("https://ipapi.co/json")
+      .then(res => res.json())
+      .then(data => callback(data.country_code))
+      .catch(() => callback("us"));
+  },
+  utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+});
+
+function handleSubmit(e) {
+  e.preventDefault();
+
+  const formData = {
+    name: document.getElementById("name").value.trim(),
+    company: document.getElementById("Company").value.trim(),
+    phone: document.getElementById("phone").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    description: document.getElementById("description").value.trim()
+  };
+
+  console.log("📦 Собранные данные формы:", formData);
+}
+
+
 aboutText();
 setupTabSlider();
