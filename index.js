@@ -43,6 +43,87 @@ function setupTabSlider() {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const burgerBtn = document.getElementById('burger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('overlay');
+  const body = document.body;
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-item a');
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+
+  function toggleMenu() {
+    burgerBtn.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    body.classList.toggle('menu-open');
+    body.classList.toggle('hidden');
+  }
+
+  function closeMenu() {
+    burgerBtn.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    body.classList.remove('menu-open');
+    body.classList.remove('hidden');
+  }
+
+  burgerBtn.onclick = () => { toggleMenu(); };
+
+  overlay.onclick = () => { closeMenu(); };
+
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      closeMenu();
+
+      const targetId = this.getAttribute('href');
+      if (targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }, 300);
+        }
+      }
+    });
+  });
+
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', function (e) {
+      closeMenu();
+
+      const targetId = this.getAttribute('href');
+      if (targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }, 300);
+        }
+      }
+    });
+  }
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 768) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
+  });
+});
+
 const input = document.querySelector("#phone");
 
 const iti = window.intlTelInput(input, {
