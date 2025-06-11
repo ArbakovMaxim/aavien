@@ -283,7 +283,7 @@ table {
 .hexagon-wrapper-line-1 {
   display: flex;
   flex-direction: column;
-  margin-right: -50px;
+  margin-right: -65px;
 }
 
 .hexagon-wrapper-line-2 {
@@ -295,7 +295,7 @@ table {
 .hexagon-wrapper-line-3 {
   display: flex;
   flex-direction: column;
-  margin-left: -50px;
+  margin-left: -65px;
 }
 
 /* /////////////////////////////////////////////////////about///////////////////////////////////////////////////// */
@@ -859,6 +859,9 @@ table {
 }
 
 .news__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   max-width: 424px;
   width: 100%;
 }
@@ -1075,4 +1078,46 @@ table {
 .whatsapp-float:hover .tooltip {
   opacity: 1;
   visibility: visible;
+}
+
+/* ////////////////////////////////////////////////////Media Queries//////////////////////////////////////////////////////// */
+
+@media (max-width: 1250px) {
+  .hero__title {
+    font-family: Alike;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .news__item {
+    height: 400px;
+  }
+
+  .form__wrapper {
+    max-width: 505px;
+  }
+
+  .tel-input {
+    width: 210px;
+  }
+
+  .hexagon-wrapper {
+    width: 222px;
+    height: 186px;
+  }
+
+  .hexagon-wrapper-line-1 {
+    margin-right: -55px;
+  }
+
+  .hexagon-wrapper-line-3 {
+    margin-left: -55px;
+  }
+
+  .footer__list {
+    gap: 100px;
+  }
 }
