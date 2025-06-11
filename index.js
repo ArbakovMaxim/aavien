@@ -137,6 +137,32 @@ const iti = window.intlTelInput(input, {
   utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
 });
 
+function toggleContent(index) {
+  const content = document.getElementById(`content-${index}`);
+  const plus = content.parentElement.querySelector('.industrial__plus');
+  for (let i = 0; i < 4; i++) {
+    if (i !== index) {
+      const otherContent = document.getElementById(`content-${i}`);
+      const otherPlus = otherContent.parentElement.querySelector('.industrial__plus');
+      otherContent.classList.remove('active');
+      otherPlus.classList.remove('active');
+    }
+  }
+
+  content.classList.toggle('active');
+  plus.classList.toggle('active');
+}
+document.addEventListener('click', function (event) {
+  if (!event.target.closest('.industries__wrapper-content')) {
+    for (let i = 0; i < 4; i++) {
+      const content = document.getElementById(`content-${i}`);
+      const plus = content.parentElement.querySelector('.industrial__plus');
+      content.classList.remove('active');
+      plus.classList.remove('active');
+    }
+  }
+});
+
 function handleSubmit(e) {
   e.preventDefault();
 

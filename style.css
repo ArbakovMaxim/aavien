@@ -631,7 +631,7 @@ table {
   object-fit: cover;
 }
 
-/* //////////////////////////////////////////////////Industries & Capabilities section////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////Industries & Capabilities section////////////////////////////////////// */
 
 .Industries {
   width: 100%;
@@ -748,6 +748,78 @@ table {
 .tab.active {
   border-color: #fff;
   color: #fff;
+}
+
+/* //////////////////////////////////////////////////Industries mobile section////////////////////////////////////// */
+
+.industries__list {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  gap: 40px;
+}
+
+.industries__item {
+  background-color: #fff;
+}
+
+.industries__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.industries__wrapper {
+  padding: 8px;
+}
+
+.industries__wrapper-content {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #12305e;
+  color: #12305e;
+}
+
+.industrial__title {
+  font-family: Alike;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: bottom;
+}
+
+.industrial__plus {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.industrial__plus.active {
+  transform: rotate(45deg);
+}
+
+.industries__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  background-color: #fff;
+  color: #333;
+}
+
+.industries__content.active {
+  max-height: 500px;
+  padding: 20px;
+}
+
+.industries__content-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
 }
 
 /* ///////////////////////////////////////////////////What Sets Us Apart////////////////////////////////////////////////////////// */
@@ -1352,7 +1424,47 @@ table {
   }
 }
 
+@media (max-width: 780px) {
+  .form__container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form__wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .form__input-group {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .form__input {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .tel-input {
+    width: 100%;
+  }
+
+  .iti--allow-dropdown {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
+  .conteiner {
+    padding: 0 8px;
+  }
+
+  .what-sets-us-apart__container {
+    padding: 40px 8px 0 8px;
+  }
+
   .hero {
     height: 800px;
   }
@@ -1413,5 +1525,281 @@ table {
 
   .tabs__viewport {
     display: none;
+  }
+
+  .industries__list {
+    display: flex;
+  }
+
+  .who-we-work-with {
+    padding-bottom: 40px;
+  }
+
+  .form {
+    padding-bottom: 40px;
+  }
+
+  .news {
+    padding: 40px 0;
+  }
+
+  .news__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .news__item {
+    height: 100%;
+  }
+
+  .footer__list {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 684px) {
+  .apart-list {
+    justify-content: center;
+  }
+
+  .who-title-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .partners-list {
+    gap: 8px;
+  }
+
+  .partner-item {
+    width: 270px;
+    height: 225px;
+  }
+
+  .wrapper-mission-vision {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vision,
+  .mission {
+    width: 90%;
+  }
+
+  .what-sets-us-apart {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 684px) {
+  .partner-item {
+    width: 220px;
+    height: 175px;
+  }
+
+  .form__container {
+    padding: 20px;
+  }
+
+  .footer__info {
+    width: 250px;
+  }
+}
+
+@media (max-width: 540px) {
+  .who-we-work-with_title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+
+  .who-we-work-with_text {
+    margin-top: 16px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 730px;
+  }
+
+  .hexagon-wrapper {
+    width: 133px;
+    height: 114px;
+  }
+
+  .hexagon-wrapper-line-1 {
+    margin-right: -35px;
+  }
+
+  .hexagon-wrapper-line-3 {
+    margin-left: -35px;
+  }
+
+  .hero__content {
+    text-align: start;
+  }
+
+  .hero__title {
+    font-size: 40px;
+    margin-top: 12px;
+  }
+
+  .about_title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+
+  .about_text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: start;
+  }
+
+  .about_text_img {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+  }
+
+  .wrapper-mission-vision {
+    margin-top: 40px;
+  }
+
+  .mission-title,
+  .vision-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+
+  .mission-text,
+  .vision-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  .certificates_title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+
+  .industries__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  .what-sets-us-apart_title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  .apart-item {
+    height: 203px;
+  }
+
+  .apart-title {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  .apart-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  .partner-item {
+    width: 168px;
+    height: 147px;
+  }
+
+  .form__container {
+    padding: 40px 9px;
+  }
+
+  .form__img {
+    width: 80px;
+    height: 100px;
+  }
+
+  .form__title {
+    font-family: Alike;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  .form__text {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  .form__input {
+    margin-bottom: 0;
+  }
+
+  .form__button {
+    width: 100%;
+  }
+
+  .news__title {
+    font-family: Alike;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  .news_text {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  .footer__bottom-wrapper {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .footer__container {
+    padding: 0 70px;
   }
 }
