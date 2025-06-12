@@ -180,3 +180,85 @@ function handleSubmit(e) {
 
 aboutText();
 setupTabSlider();
+
+
+
+const certificates = [
+  {
+    img: "img/certificates-1x2.jpg",
+  },
+  {
+    img: "img/certificates-2x2.jpg",
+  },
+  {
+    img: "img/certificates-3x2.jpg",
+  }
+];
+
+let currentImageIndex = 0;
+
+function openModal(index) {
+  currentImageIndex = index;
+  const modal = document.getElementById('certificateModal');
+  const modalImage = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+
+  updateModalContent();
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const modal = document.getElementById('certificateModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % certificates.length;
+  updateModalContent();
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + certificates.length) % certificates.length;
+  updateModalContent();
+}
+
+function updateModalContent() {
+  const modalImage = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+  const cert = certificates[currentImageIndex];
+
+  modalImage.innerHTML = `
+                <div class="cert-icon" style="font-size: 72px; margin-bottom: 30px;">
+                <img src="${cert.img}" alt="Certificate Image" style="max-width: 100%; max-height: 100%; border-radius: 12px;">
+                </div>
+            `;
+
+  modalCaption.textContent = cert.description;
+}
+
+window.onclick = function (event) {
+  const modal = document.getElementById('certificateModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+}
+
+document.addEventListener('keydown', function (event) {
+  const modal = document.getElementById('certificateModal');
+  if (modal.classList.contains('active')) {
+    switch (event.key) {
+      case 'Escape':
+        closeModal();
+        break;
+      case 'ArrowLeft':
+        prevImage();
+        break;
+      case 'ArrowRight':
+        nextImage();
+        break;
+    }
+  }
+});

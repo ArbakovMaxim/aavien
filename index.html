@@ -152,7 +152,7 @@
         <div class="about__content">
           <div class="about_text">
           <p>The story of Aavien International begins with a legacy rooted in
-              excellence as Indentor & Manufacturer Representative (OEM)</p>
+              excellence as Indentor & Manufacturer Representative (OEM).</p>
           </br>
           <p>
             Our journey started in 1967 when our parent company was founded in India with a strong focus on delivering high-quality solutions to the Nationalised Industries, mainly Energy, Railway Rolling Stock & Marine sector.
@@ -170,7 +170,7 @@
         </div>
           <div class="about_img_wrapper">
             <img class="about_img" src="img/about.jpg" alt="About Us" />
-            <p class="about_text_img">We're proud to be a sister company of Energy and Power DMCC and hold an ICV Score of 44.86%, demonstrating our strong local contribution</p>
+            <p class="about_text_img">We're proud to be a sister company of Energy and Power DMCC and hold an ICV Score of 44.86%, demonstrating our strong local contribution.</p>
           </div>
       </div>
       <div class="wrapper-mission-vision">
@@ -202,18 +202,30 @@
       <div class="conteiner">
         <h2 class="certificates_title">Our ISO Certifications</h2>
         <div class="wrapper-certificates">
-          <div class="certificates_img_wrapper">
+          <div class="certificates_img_wrapper wrapper-certificates-img" onclick="openModal(0)">
             <img class="certificates_img" src="img/certificates-1.jpg" alt="ISO 9001"/>
           </div>
-          <div>
+          <div class="wrapper-certificates-img" onclick="openModal(1)">
             <img class="certificates_img" src="img/certificates-2.jpg" alt="ISO 14001"/>
           </div>
-          <div>
+          <div class="wrapper-certificates-img" onclick="openModal(2)">
             <img class="certificates_img" src="img/certificates-3.jpg" alt="ISO 45001"/>
           </div>
         </div>
       </div>
     </section>
+
+<!-- ////////////////////////////////////////////////////// Modal  //////////////////////////////////////////////////////-->
+
+    <div id="certificateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <button class="modal-nav prev" onclick="prevImage()">❮</button>
+            <button class="modal-nav next" onclick="nextImage()">❯</button>
+            <div id="modalImage" class="certificates_img modal-image"></div>
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
 
     <!-- ///////////////////////////////////////////Industries & Capabilities section/////////////////////////////////// -->
     
@@ -295,9 +307,9 @@
           <p class="tabs-text">Boiler, Thermic Fluid Heater, Pumps & Compressors of all types, HVAC systems, Fans and Blowers.</p>
           </br>
           <p class="tabs-text">Steam Turbines, Pneumatic Instrumental Controls, Generators & Motors, Industrial Mixers, 
-            Dryers, Filtration systems, Blowers and Aerators, Grinders, Screening, Sedimentation, and Filtration solutions, Valves and</p>
+            Dryers, Filtration systems, Blowers and Aerators, Grinders, Screening, Sedimentation, and Filtration solutions.</p>
           </br>
-          <p class="tabs-text">Accessories, Steel: Hot Rolled-Flat, and Gas & Petroleum Pipe, Gas pipeline & Pipe fittings.</p>
+          <p class="tabs-text"> Valves and accessories, Steel: Hot Rolled-Flat, and Gas & Petroleum Pipe, Gas pipeline & Pipe fittings.</p>
           <a href="#contact" class="hero__button">Contact Us</a>
         </div>
       </div>
@@ -542,7 +554,7 @@
           </ul>
         </div>
       </section>
-
+      
       <!-- /////////////////////////////////////////////footer/////////////////////////////////////////// -->
 
       <footer class="footer">
