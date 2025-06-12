@@ -62,7 +62,7 @@
             <li class="mobile-menu-item"><a href="#industries">Industries & Capabilities</a></li>
             <li class="mobile-menu-item"><a href="#apart">What Sets Us Apart</a></li>
             <li class="mobile-menu-item"><a href="#partners">Clients & Partners</a></li>
-            <li class="mobile-menu-item"><a href="#news">News & Updates</a></li>
+            <!-- <li class="mobile-menu-item"><a href="#news">News & Updates</a></li> -->
             <li class="mobile-menu-item"><a href="#contact">Contact Us</a></li>
         </ul>
         <div class="mobile-menu-button-wrapper">
@@ -84,58 +84,58 @@
             Marine, and Global <br />
             Commodity Trading
           </h1>
-          <a href="#contact" class="hero__button hero__button--pc">Contact Us</a>
+          <span href="#contact" class="hero__button hero__button--pc">Contact Us</span>
         </div>
 
         <div class="hero__honeycomb">
           <div class="hexagon-wrapper-line-1">
             <div class="hexagon-wrapper">
-              <div class="hexagon">
+              <div class="hexagon" onclick="navigateToIndustry('oil-gas')">
                 <img src="img/sota1.png" alt="sota img" />
-                <a href="#industries" class="hex-overlay">Learn more →</a>
+                <span  class="hex-overlay">Learn more →</span>
               </div>
             </div>
             <div class="hexagon-wrapper">
-              <div class="hexagon">
+              <div class="hexagon" onclick="navigateToIndustry('marine')">
                 <img src="img/sota6.png" alt="sota img" />
-                <a href="#industries" class="hex-overlay">Learn more →</a>
+                <span  class="hex-overlay">Learn more →</span>
               </div>
             </div>
           </div>
 
           <div class="hexagon-wrapper-line-2">
             <div class="hexagon-wrapper">
-              <div class="hexagon">
+              <div class="hexagon" onclick="navigateToIndustry('oil-gas')">
                 <img src="img/sota2.png" alt="sota img" />
-                <a href="#industries" class="hex-overlay">Learn more →</a>
+                <span  class="hex-overlay">Learn more →</span>
               </div>
             </div>
             <div class="hexagon-wrapper">
-              <div class="hexagon">
+              <div class="hexagon" onclick="navigateToIndustry('oil-gas')">
                 <img src="img/sota7.png" alt="sota img" />
-                <a href="#industries" class="hex-overlay">Learn more →</a>
+                <span  class="hex-overlay">Learn more →</span>
               </div>
             </div>
             <div class="hexagon-wrapper">
-              <div class="hexagon">
+              <div class="hexagon" onclick="navigateToIndustry('industrial')">
                 <img src="img/sota5.png" alt="sota img" />
-                <a href="#industries" class="hex-overlay">Learn more →</a>
+                <span  class="hex-overlay">Learn more →</span>
               </div>
             </div>
           </div>
 
           <div class="hexagon-wrapper-line-3">
             <div class="hexagon-wrapper">
-              <div class="hexagon">
+              <div class="hexagon" onclick="navigateToIndustry('industrial')">
                 <img src="img/sota3.png" alt="sota img" />
-                <a href="#industries" class="hex-overlay">Learn more →</a>
+                <span  class="hex-overlay">Learn more →</span>
               </div>
             </div>
 
             <div class="hexagon-wrapper">
-              <div class="hexagon">
+              <div class="hexagon" onclick="navigateToIndustry('railways')">
                 <img src="img/sota4.png" alt="sota img" />
-                <a href="#industries" class="hex-overlay">Learn more →</a>
+                <span  class="hex-overlay">Learn more →</span>
               </div>
             </div>
           </div>
@@ -287,7 +287,7 @@
 
   <!-- ///////////////////////////////////////////Industries & Capabilities section mobile/////////////////////////////////// -->
     <ul class="industries__list">
-      <li class="industries__item">
+      <li class="industries__item" data-industry="oil-gas">
         <img class="industries__img" src="img/tab1.jpg" alt="Oil & Gas" />
         <div class="industries__wrapper">
         <div class="industries__wrapper-content" onclick="toggleContent(0)">
@@ -327,7 +327,7 @@
       </div>
       </li>
 
-            <li class="industries__item">
+            <li class="industries__item" data-industry="railways">
         <img class="industries__img" src="img/tab2.jpg" alt="Railways" />
         <div class="industries__wrapper">
         <div class="industries__wrapper-content" onclick="toggleContent(1)">
@@ -353,7 +353,7 @@
       </div>
       </li>
 
-            <li class="industries__item">
+            <li class="industries__item" data-industry="marine">
         <img class="industries__img" src="img/tab3.jpg" alt="Marine" />
         <div class="industries__wrapper">
         <div class="industries__wrapper-content" onclick="toggleContent(2)">
@@ -374,7 +374,7 @@
       </div>
       </li>
 
-            <li class="industries__item">
+            <li class="industries__item" data-industry="industrial">
         <img class="industries__img" src="img/tab4.jpg" alt="Industrial Equipment" />
         <div class="industries__wrapper">
         <div class="industries__wrapper-content" onclick="toggleContent(3)">

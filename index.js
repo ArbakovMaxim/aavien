@@ -165,11 +165,12 @@ document.addEventListener('click', function (event) {
 
 function handleSubmit(e) {
   e.preventDefault();
+  const fullPhone = iti.getNumber();
 
   const formData = {
     name: document.getElementById("name").value.trim(),
     company: document.getElementById("Company").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
+    phone: fullPhone,
     email: document.getElementById("email").value.trim(),
     description: document.getElementById("description").value.trim()
   };
@@ -296,5 +297,63 @@ document.addEventListener('keydown', function (event) {
         nextImage();
         break;
     }
+  }
+});
+
+function toggleContent(index) {
+  const content = document.getElementById(`content-${index}`);
+  const plus = content.parentElement.querySelector('.industrial__plus');
+  document.querySelectorAll('.industries__content').forEach((item, i) => {
+    if (i !== index) {
+      item.classList.remove('active');
+      item.parentElement.querySelector('.industrial__plus').style.transform = 'rotate(0deg)';
+    }
+  });
+  content.classList.toggle('active');
+  if (content.classList.contains('active')) {
+    plus.style.transform = 'rotate(45deg)';
+  } else {
+    plus.style.transform = 'rotate(0deg)';
+  }
+}
+function navigateToIndustry(industryType) {
+  const isMobile = window.innerWidth <= 768;
+  document.getElementById('industries').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+
+  setTimeout(() => {
+    const industryItem = document.querySelector(`[data-industry="${industryType}"]`);
+    if (!industryItem) return;
+
+    const allItems = document.querySelectorAll('.industries__item');
+    const index = Array.from(allItems).indexOf(industryItem);
+
+    if (index === -1) return;
+
+    if (isMobile) {
+      toggleContent(index);
+      setTimeout(() => {
+        industryItem.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }, 300);
+    } else {
+      const tabs = document.querySelectorAll('.tab');
+      const track = document.querySelector('.tabs__track');
+
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+      });
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+  }, 100);
+}
+
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.industries__wrapper-content')) {
+    return;
   }
 });

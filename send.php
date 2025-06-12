@@ -7,11 +7,13 @@ $phone = $data["phone"] ?? '';
 $email = $data["email"] ?? '';
 $description = $data["description"] ?? '';
 
-$to = "info@aavienintl.com";
+$to = "aavien.intl@aavienintl.com";
 $subject = "New contact form submission";
 $body = "Name: $name\nCompany: $company\nPhone: $phone\nEmail: $email\n\nMessage:\n$description";
 
-$headers = "From: $email\r\n";
+$fromName = "Website Contact Form";
+$fromEmail = "Info@aavienintl.com";
+$headers = "From: $fromName <$fromEmail>\r\n";
 $headers .= "Reply-To: $email\r\n";
 
 if (mail($to, $subject, $body, $headers)) {

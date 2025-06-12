@@ -1975,3 +1975,9 @@ table {
     padding: 0 70px;
   }
 }
+
+@media (max-width: 420px) {
+  .certificates_img_wrapper {
+    width: 280px;
+  }
+}
