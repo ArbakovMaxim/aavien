@@ -174,7 +174,43 @@ function handleSubmit(e) {
     description: document.getElementById("description").value.trim()
   };
 
-  console.log("📦 Собранные данные формы:", formData);
+  fetch("send.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to send");
+      return res.json();
+    })
+    .then((data) => {
+      if (data.success) {
+        showSuccessAnimation();
+        setTimeout(() => {
+          document.querySelector('form').reset();
+        }, 2000);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      alert("Failed to send message.");
+    });
+}
+
+function showSuccessAnimation() {
+  const overlay = document.getElementById('successOverlay');
+  overlay.classList.add('show');
+  setTimeout(() => {
+    overlay.classList.add('fade-out');
+    overlay.classList.remove('show');
+    setTimeout(() => {
+      overlay.classList.remove('fade-out');
+    }, 2000);
+  }, 3000);
 }
 
 
