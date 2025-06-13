@@ -1484,6 +1484,13 @@ table {
 
 /* ////////////////////////////////////////////////////Media Queries//////////////////////////////////////////////////////// */
 
+@media (max-width: 1376px) {
+  .partner-item {
+    width: 48%;
+    height: 100%;
+  }
+}
+
 @media (max-width: 1250px) {
   .hero__title {
     font-family: Alike;

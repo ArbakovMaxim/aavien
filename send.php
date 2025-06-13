@@ -7,8 +7,10 @@ $phone = $data["phone"] ?? '';
 $email = $data["email"] ?? '';
 $description = $data["description"] ?? '';
 
+$date = date("j F Y");
+
 $to = "aavien.intl@aavienintl.com";
-$subject = "New contact form submission";
+$subject = "New {$company} Enquiry {$date}";
 $body = "Name: $name\nCompany: $company\nPhone: $phone\nEmail: $email\n\nMessage:\n$description";
 
 $fromName = "Website Contact Form";
